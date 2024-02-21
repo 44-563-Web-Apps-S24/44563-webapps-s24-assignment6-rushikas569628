@@ -39,7 +39,49 @@ function discount(){
     }
     document.getElementById("result").innerHTML = "Totals are: " + myOutput;
 }
+</script>
+<form>
+    <input type="radio" id="sumradio" name="operation" onclick="chooseOp()" value="sum">
+    <label for="sumradiobtn">Sum</label></br>
+  
+    <input type="radio" id="multiplyradio" name="operation" onclick="chooseOp()" value="multiply">
+    <label for="mulradiobtn">Multiply</label></br>
+  
+    <input type="radio" id="exponentradio" name="operation" onclick="chooseOp()" value="exponent">
+    <label for="expradiobtn">Exponent</label></br>
+</form>
+<p id="result">This text will be replaced </p>
 
+<script> 
+function chooseOp() {
+    var priceperItem= parseFloat(document.getElementById("priceperItem").value);
+    var priceDiscount = parseFloat(document.getElementById("percentDiscount").value);
+
+    var radios = document.getElementsByName('operation');
+    var chooseOperation;
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            chooseOperation = radios[i].value;
+            break;
+        }
+    }
+
+    var result;
+    switch (chooseOperation) {
+        case 'sum':
+            result = priceperItem + priceDiscount;
+            document.getElementById("result").innerHTML = "Sum of " + priceperItem + " and " + priceDiscount + " is " + result;
+            break;
+        case 'multiply':
+            result = priceperItem * priceDiscount;
+            document.getElementById("result").innerHTML = "Product of " + priceperItem + " and " + priceDiscount + " is " + result;
+            break;
+        case 'exponent':
+            result = Math.pow(priceperItem, priceDiscount);
+            document.getElementById("result").innerHTML = "Exponent of " + priceperItem + " raised to the power of " + priceDiscount + " is " + result;
+            break;
+    }
+}
 </script>
 
 </body>
