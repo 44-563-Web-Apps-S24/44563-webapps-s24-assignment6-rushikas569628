@@ -1,40 +1,67 @@
 <!DOCTYPE html>
 <html>
- <title>Animal Page</title>
+ <head>
+    <title>Animal page</title>
+ </head>
 <body>
 
 <h2>Animal game by Rushika</h2>
 
 <form>
-    <form id="guess-form">
-        <label for="hidden-animal">The hidden animal type:</label>
-        <input type="password" id="hidden-animal" value="Chicken">
-        <br>
-        <label for="guess-animal">Guess the animal:</label>
-        <input type="text" id="guess-animal">
-        <br>
-        <button type="button" onclick="checkAnimal()">Check the guess</button>
-    </form>
-    <div id="result">Correct: 0 | Wrong: 0</div>
+    <label for="hiddenanimal">The hidden animal type</label>
+    <input type ="password" id="hiddenanimal" value="Chicken"> <br>
+    <label for="animalguess">Guess the animal</label>
+    <input type ="text" id="animalguess" autofocus> <br>
+    <button type="button" onclick="checkAnimal()">Check</button>
+</form>
+<p id="result">Correct : 0 and Wrong : 0</p>
+<script> 
+var correct=0;
+var wrong=0;
+function checkAnimal(){
+    console.log("Getting form values")
+    var hiddenanimal= document.getElementById("hiddenanimal").value;
+    var animalguess=document.getElementById("animalguess").value;
 
-    <script>
-        let correct = 0;
-        let wrong = 0;
+    if(hiddenanimal==animalguess){
+        correct++;
+        alert("Ruff ruff");
+    } else {
+        wrong++;
+        alert("Grrrr");
+    }
+    var resultElement = document.getElementById("result");
+    resultElement.innerHTML = "Correct: " + correct + " | Wrong: " + wrong;
+}
+</script>
 
-        function checkAnimal() {
-            const hiddenAnimalInput = document.getElementById('hiddenAnimal');
-            const guessAnimalInput = document.getElementById('guessAnimal');
-            const resultElement = document.getElementById('result');
-            if (hiddenAnimalInput.value === guessAnimalInput.value) {
-                correct++;
-                alert("Ruff ruff");
-            } else {
-                wrong++;
-                alert("Grrrr");
-            }
-            resultElement.innerHTML = `<p>Correct: ${correct}, Wrong: ${wrong}</p>`;
+<br>
+
+
+
+<div id="imageContainer">
+    <img id="JuiceImage" src="grapejuice.jpg" width="150" height="150" onclick="selectImage()">
+</div>
+
+<script>
+    var useImage = 1;
+    function selectImage() {
+        switch (useImage) {
+            case 1:
+                document.getElementById("JuiceImage").src = "grapejuice.jpg";
+                useImage = 2;
+                break;
+            case 2:
+                document.getElementById("JuiceImage").src = "lemon-juice.jpg";
+                useImage = 3;
+                break;
+            case 3:
+                document.getElementById("JuiceImage").src = "pepsi.jpg";
+                useImage = 1;
+                break;
         }
-    </script>
+    }
+</script>
 
 </body>
 </html> 
