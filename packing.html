@@ -22,6 +22,16 @@
 
 <p id="result">This text will be replaced</p>
 
+<form>
+    <label for="monthName">Enter travel Month</label>
+    <input type="text" id="monthName" value="May"> <br>
+
+    <label for="tripPrice">Enter Price</label>
+    <input type="text" id="tripPrice" value="10"> <br>
+
+    <button type="button" onclick="updatePack()">Update the Pack</button>
+</form>
+<p id="Result of packing">This text will be replaced</p>
 <script> 
 var my_pack = {};
 
@@ -37,5 +47,19 @@ function selectPack() {
 }
 </script>
 
+<script>
+   var my_pack = {};
+
+function updatePack() {
+    my_pack = {};
+    var monthName = document.getElementById("monthName").value;
+    var tripPrice= document.getElementById("tripPrice").value;
+
+    my_pack["MonthName"] = monthName;
+    my_pack["TripPrice"] = tripPrice;
+
+    document.getElementById("Result of packing").innerHTML = "Updated Pack: " + JSON.stringify(my_pack); 
+}
+</script>
 </body>
 </html>
