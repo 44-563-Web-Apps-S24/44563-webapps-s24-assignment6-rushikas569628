@@ -2,3 +2,9 @@
 # WebApps-S24-Assignment-6
 Introduction to Java Script and DOM
 
+Hosted at <br>
+Animal Page : <https://44-563-web-apps-s24.github.io/44563-webapps-s24-assignment6-rushikas569628/animal.html>
+<br>
+Discount page: <https://44-563-web-apps-s24.github.io/44563-webapps-s24-assignment6-rushikas569628/discount.html>
+<br>
+Packing Page: <https://44-563-web-apps-s24.github.io/44563-webapps-s24-assignment6-rushikas569628/packing.html>
